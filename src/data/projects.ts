@@ -4,6 +4,7 @@ export type Project = {
   stack: string[];
   github: string;
   demo: string;
+  image: string;
   featured?: boolean;
 };
 
@@ -12,9 +13,10 @@ export const projects: Project[] = [
     title: "Geospatial Flood Risk Prediction",
     description:
       "An ML pipeline that fuses geospatial and climate variables to predict regional flood exposure with interpretable model outputs.",
-    stack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    stack: ["Python", "Scikit-learn", "Pandas", "Streamlit", "Folium"],
+    github: "https://github.com/Tiaaan12/geospatial-flood-risk-prediction",
+    demo: "https://geospatial-flood-risk-predictor.streamlit.app/",
+    image: "/projects/flood.png",
     featured: true,
   },
   {
@@ -22,26 +24,29 @@ export const projects: Project[] = [
     description:
       "A statistical research product analyzing multi-source datasets to uncover meaningful correlations and communicate insight clearly.",
     stack: ["Python", "SQL", "Jupyter", "Pandas", "Seaborn"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/Tiaaan12/Correlation-research",
+    demo: "https://unavaiable.com",
+    image: "/projects/correlation.png",
     featured: true,
   },
   {
     title: "JavaBee Express",
     description:
-      "A production-minded e-commerce and operations platform built with a modern stack and thoughtful user experience.",
-    stack: ["TypeScript", "Next.js", "Node.js", "MongoDB", "TailwindCSS"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "Desktop application demonstrating Object-Oriented Programming with Java Swing and thoughtful user experience.",
+    stack: ["Jawa", "Swing", "OOP", "GUI", "Netbeans"],
+    github: "https://github.com/Tiaaan12/Cafe-Management",
+    demo: "https://unavailable.com",
+    image: "/projects/java.png",
     featured: true,
   },
   {
-    title: "Portfolio Website",
+    title: "Warehouse Management System",
     description:
-      "A premium, minimal portfolio concept designed to feel like a modern AI company product rather than a template site.",
-    stack: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "Desktop application for inventory, order, and warehouse management using Data Structures and Algorithms.",
+    stack: ["Java", "Data Structures", "Max-Heap", "Recurrence"],
+    github: "https://github.com/Tiaaan12/E-commerce-Warehouse-System",
+    demo: "https://unavailable.com",
+    image: "/projects/dsa.png",
     featured: true,
   },
 ];

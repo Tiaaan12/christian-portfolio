@@ -43,7 +43,7 @@ export function Hero() {
             <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-3 text-white shadow-[0_0_40px_rgba(59,130,246,0.25)] transition hover:brightness-110">
               View Projects <ArrowRight size={16} />
             </a>
-            <a href="/resume.pdf" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-slate-200 backdrop-blur-xl transition hover:bg-white/10">
+            <a href="/resume.pdf" download="Christian_Devera_resume.pdf" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-slate-200 backdrop-blur-xl transition hover:bg-white/10">
               <Download size={16} /> Download Resume
             </a>
           </div>

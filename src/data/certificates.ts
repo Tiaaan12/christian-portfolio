@@ -1,14 +1,17 @@
 export const certificates = [
   {
-    title: "AWS Cloud Practitioner Challenge",
-    description: "A modern cloud foundation credential focused on practical architecture and service understanding.",
+    title: "AWS AI Practitioner Challenge",
+    description: "A foundational AI credential focused on understanding practical AI concepts, applications, and responsible AI practices.",
+    image: "/certificates/aws.png",
   },
   {
     title: "Database Certification",
-    description: "Strengthened operational knowledge around relational data modeling, querying, and performance.",
+    description: "A database credential demonstrating knowledge of database concepts, relational data, and practical database fundamentals.",
+    image: "/certificates/database.png",
   },
   {
-    title: "Advanced AI Systems",
-    description: "A future-facing credential path centered on applied AI engineering and implementation strategy.",
+    title: "Fundamentals of Machine Learning and AI",
+    description: "A foundational credential covering core machine learning and artificial intelligence concepts.",
+    image: "/certificates/aws_training.png",
   },
 ];

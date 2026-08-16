@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Moon, Sun } from "lucide-react";
 
 const links = [
@@ -24,6 +24,22 @@ export function Navbar() {
     setHidden(latest > 120 && latest > previous);
   });
 
+  useEffect(() => {
+    const storedTheme = window.localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = storedTheme ? storedTheme === "dark" : prefersDark;
+
+    setDark(isDark);
+    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    window.localStorage.setItem("theme", dark ? "dark" : "light");
+  }, [dark]);
+
   return (
     <motion.header
       className="fixed inset-x-0 top-0 z-50"
@@ -32,12 +48,12 @@ export function Navbar() {
       transition={{ duration: 0.25, ease: "easeInOut" }}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="#home" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 backdrop-blur-xl">
+        <Link href="#home" className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-2 text-sm font-medium text-[color:var(--foreground)] backdrop-blur-xl">
           Christian Devera
         </Link>
-        <nav className="hidden items-center gap-2 rounded-full border border-white/10 bg-slate-950/50 px-3 py-2 text-sm text-slate-300 backdrop-blur-xl md:flex">
+        <nav className="hidden items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-2 text-sm text-[color:var(--foreground)]/80 backdrop-blur-xl md:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="rounded-full px-3 py-1.5 transition hover:bg-white/10 hover:text-white">
+            <Link key={link.href} href={link.href} className="rounded-full px-3 py-1.5 transition hover:bg-[color:var(--surface-strong)] hover:text-[color:var(--foreground)]">
               {link.label}
             </Link>
           ))}
@@ -47,7 +63,7 @@ export function Navbar() {
             type="button"
             aria-label="Toggle color theme"
             onClick={() => setDark((value) => !value)}
-            className="rounded-full border border-white/10 bg-white/5 p-2.5 text-slate-100 backdrop-blur-xl transition hover:bg-white/10"
+            className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] p-2.5 text-[color:var(--foreground)] backdrop-blur-xl transition hover:bg-[color:var(--surface-strong)]"
           >
             {dark ? <Moon size={16} /> : <Sun size={16} />}
           </button>
